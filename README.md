@@ -1,2 +1,2 @@
 # Codigos_Java
- Sistema de gerenciamento de contato na linguagem java, com as fucionalidades de: Adicionar, Remover, Buscar contato, Lista os contatos.
+ Sistema de gerenciamento de contato em Java. Com as fucionalidades de: Adicionar, Remover, Buscar contato, Listar contatos.
