@@ -1,7 +1,7 @@
 ## Gerenciador de contato
 
 > A proposta desse mini projeto é
-> proprorcionr um gerenciador basico em Java.
+> proprorcionr um gerenciador de contato basico em Java.
 > Com algumas fucionalidades basicas
 
 ## Fucionalidades
