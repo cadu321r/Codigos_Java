@@ -1,4 +1,161 @@
-class main
+## Gerenciador de contato
+
+> A proposta desse mini projeto é
+> proprorcionr um gerenciador basico em Java.
+> Com algumas fucionalidades basicas
+
+## Fucionalidades
+
+- Adicionar contato
+- Remover contato
+- Buscar contato requirido
+- Listar contatos
+
+## Código do projeto
+
+#### - Class Contato Profissional
+```
+class ContatoProfissional extends Contato{
+    private String empresa;
+    private String cargo;
+    
+    ContatoProfissional(String name, String email, String telefone, String empresa, String cargo){
+        super(name, email, telefone);
+        this.empresa = empresa;
+        this.cargo = cargo;
+    }
+    
+    String getEmpresa(){
+        return empresa;
+    }
+    
+    String getCargo(){
+        return cargo;
+    }
+    
+    @Override
+    public void informacao(){
+        System.out.println("Contatos Profissionais");
+    }
+}
+```
+#### - Class Contato Pessoal
+```
+class ContatoPessoal extends Contato{
+    private String endereco;
+    private String dataAniversario;
+    
+    ContatoPessoal(String name, String email, String telefone, String endereco, String dataAniversario){
+        super(name, email, telefone);
+        this.endereco = endereco;
+        this.dataAniversario = dataAniversario;
+    }
+    
+    String getEndereco(){
+        return endereco;
+    }
+    
+    String getDataAniversario(){
+        return dataAniversario;
+    }
+    
+    @Override
+    public void informacao(){
+        System.out.println("Contatos Pessoais");
+    }
+}
+
+```
+#### - Class Contato
+```
+class Contato implements Interligar{
+    private String name;
+    private String email;
+    private String telefone;
+    
+    Contato(String name, String email, String telefone){
+        this.name = name;
+        this.email = email;
+        this.telefone = telefone;
+    }
+    
+    String getName(){
+        return name;
+    }
+    
+    String getEmail(){
+        return email;
+    }
+    
+    String getTelefone(){
+        return telefone;
+    }
+    @Override
+    public void informacao(){
+        System.out.println("Contatos Gerais");
+    }
+}
+
+```
+#### - Class Agenda
+```
+import java.util.ArrayList;
+import java.util.List;
+
+class Agenda{
+    List <Contato> listaC;
+    Agenda(){
+        listaC = new ArrayList<>();
+    }
+    
+    void addContato(Contato contato){
+        listaC.add(contato);
+    }
+    
+    boolean removerContato(String name){
+        for(Contato contato : listaC){
+            if(contato.getName().equals(name)){
+                System.out.println(contato.getName() + " " + contato.getTelefone() + " " + contato.getEmail());
+                listaC.remove(contato);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    Contato buscarContato(String x){
+        for(Contato contato : listaC){
+            if(contato.getName().equalsIgnoreCase(x) || contato.getTelefone().equals(x) || contato.getEmail().equals(x)){
+                return contato;
+            }
+        }
+        return null;
+    }
+    
+    void listarContatos() {
+        for (Contato item : listaC) {
+            if (item instanceof ContatoProfissional) {
+                ContatoProfissional contatoProfissional = (ContatoProfissional) item;
+                System.out.println("Nome: " + contatoProfissional.getName() + " Email: " + contatoProfissional.getEmail() + " Telefone: " + contatoProfissional.getTelefone() + " Cargo: " + contatoProfissional.getCargo() + " Empresa: " + contatoProfissional.getEmpresa());
+            } else if (item instanceof ContatoPessoal) {
+                ContatoPessoal contatoPessoal = (ContatoPessoal) item;
+                System.out.println("Nome: " + contatoPessoal.getName() + " Email: " + contatoPessoal.getEmail() + " Telefone: " + contatoPessoal.getTelefone() + " Endereço: " + contatoPessoal.getEndereco() + " Data de Aniversário: " + contatoPessoal.getDataAniversario());
+            } else {
+                System.out.println("Nome: " + item.getName() + " Email: " + item.getEmail() + " Telefone: " + item.getTelefone());
+            }
+        }
+    }
+}
+```
+#### - Class Interligar
+```
+interface Interligar{
+    void informacao();
+}
+```
+##### - Class Main()
+
+```
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -99,140 +256,4 @@ public class Main {
         scanner.close();
     }
 }
-
-class Contato
-class Contato implements Interligar{
-    private String name;
-    private String email;
-    private String telefone;
-    
-    Contato(String name, String email, String telefone){
-        this.name = name;
-        this.email = email;
-        this.telefone = telefone;
-    }
-    
-    String getName(){
-        return name;
-    }
-    
-    String getEmail(){
-        return email;
-    }
-    
-    String getTelefone(){
-        return telefone;
-    }
-    @Override
-    public void informacao(){
-        System.out.println("Contatos Gerais");
-    }
-}
-
-class Contato Profissional
-
-class ContatoProfissional extends Contato{
-    private String empresa;
-    private String cargo;
-    
-    ContatoProfissional(String name, String email, String telefone, String empresa, String cargo){
-        super(name, email, telefone);
-        this.empresa = empresa;
-        this.cargo = cargo;
-    }
-    
-    String getEmpresa(){
-        return empresa;
-    }
-    
-    String getCargo(){
-        return cargo;
-    }
-    
-    @Override
-    public void informacao(){
-        System.out.println("Contatos Profissionais");
-    }
-}
-
-class Contato Pessoal
-
-class ContatoPessoal extends Contato{
-    private String endereco;
-    private String dataAniversario;
-    
-    ContatoPessoal(String name, String email, String telefone, String endereco, String dataAniversario){
-        super(name, email, telefone);
-        this.endereco = endereco;
-        this.dataAniversario = dataAniversario;
-    }
-    
-    String getEndereco(){
-        return endereco;
-    }
-    
-    String getDataAniversario(){
-        return dataAniversario;
-    }
-    
-    @Override
-    public void informacao(){
-        System.out.println("Contatos Pessoais");
-    }
-}
-
-class Agenda
-
-import java.util.ArrayList;
-import java.util.List;
-
-class Agenda{
-    List <Contato> listaC;
-    Agenda(){
-        listaC = new ArrayList<>();
-    }
-    
-    void addContato(Contato contato){
-        listaC.add(contato);
-    }
-    
-    boolean removerContato(String name){
-        for(Contato contato : listaC){
-            if(contato.getName().equals(name)){
-                System.out.println(contato.getName() + " " + contato.getTelefone() + " " + contato.getEmail());
-                listaC.remove(contato);
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    Contato buscarContato(String x){
-        for(Contato contato : listaC){
-            if(contato.getName().equalsIgnoreCase(x) || contato.getTelefone().equals(x) || contato.getEmail().equals(x)){
-                return contato;
-            }
-        }
-        return null;
-    }
-    
-    void listarContatos() {
-        for (Contato item : listaC) {
-            if (item instanceof ContatoProfissional) {
-                ContatoProfissional contatoProfissional = (ContatoProfissional) item;
-                System.out.println("Nome: " + contatoProfissional.getName() + " Email: " + contatoProfissional.getEmail() + " Telefone: " + contatoProfissional.getTelefone() + " Cargo: " + contatoProfissional.getCargo() + " Empresa: " + contatoProfissional.getEmpresa());
-            } else if (item instanceof ContatoPessoal) {
-                ContatoPessoal contatoPessoal = (ContatoPessoal) item;
-                System.out.println("Nome: " + contatoPessoal.getName() + " Email: " + contatoPessoal.getEmail() + " Telefone: " + contatoPessoal.getTelefone() + " Endereço: " + contatoPessoal.getEndereco() + " Data de Aniversário: " + contatoPessoal.getDataAniversario());
-            } else {
-                System.out.println("Nome: " + item.getName() + " Email: " + item.getEmail() + " Telefone: " + item.getTelefone());
-            }
-        }
-    }
-}
-
-class Interligar
-
-interface Interligar{
-    void informacao();
-}
+```
