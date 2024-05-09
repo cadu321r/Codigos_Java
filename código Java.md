@@ -1,24 +1,62 @@
-## Gerenciador de contato
+## 📖 Gerenciador de Contatos em Java
 
-> A proposta desse mini projeto é
-> proprorcionr um gerenciador de contato basico em Java.
-> Com algumas fucionalidades basicas
+Este projeto consiste no desenvolvimento de um **Gerenciador de Contatos** simplificado, utilizando a linguagem de programação **Java**. Ideal para quem busca eficiência e organização, este sistema permite a gestão de contatos profissionais e pessoais com facilidade e praticidade.
 
-## Fucionalidades
+### 🌟 Funcionalidades Principais
 
-- Adicionar contato
-- Remover contato
-- Buscar contato requirido
-- Listar contatos
+- **👤 Adicionar Contato:** Facilita a inserção de novos contatos, expandindo sua rede.
+- **🗑 Remover Contato:** Remove contatos existentes, mantendo sua lista atualizada.
+- **🔍 Buscar Contato:** Busca rápida por nome, telefone ou email.
+- **📋 Listar Contatos:** Visualiza todos os contatos salvos, oferecendo uma visão completa.
 
-## Código do projeto
+### 🛠️ Estrutura do Código
 
-#### - Class Contato Profissional
+#### 📁 Classe `Contato`
+> Representa a base de um contato, implementando a interface `Interligar` para proporcionar informações gerais sobre o contato.
+
+```java
+class Contato implements Interligar {
+    private String name;
+    private String email;
+    private String telefone;
+
+    // Construtor
+    Contato(String name, String email, String telefone){
+        this.name = name;
+        this.email = email;
+        this.telefone = telefone;
+    }
+
+    // Métodos de acesso
+    String getName() {
+        return name;
+    }
+
+    String getEmail() {
+        return email;
+    }
+
+    String getTelefone() {
+        return telefone;
+    }
+
+    // Método implementado da interface
+    @Override
+    public void informacao() {
+        System.out.println("Contatos Gerais");
+    }
+}
 ```
+#
+#### 📁 Classe `Contato Profissional`
+> Representa a base de um Contato Profissional, herdando a classe `Contato` as características de um contato básico e ter adicionais.
+
+```java
 class ContatoProfissional extends Contato{
     private String empresa;
     private String cargo;
     
+    // Construtor
     ContatoProfissional(String name, String email, String telefone, String empresa, String cargo){
         super(name, email, telefone);
         this.empresa = empresa;
@@ -33,18 +71,23 @@ class ContatoProfissional extends Contato{
         return cargo;
     }
     
+    // Método implementado da interface
     @Override
     public void informacao(){
         System.out.println("Contatos Profissionais");
     }
 }
 ```
-#### - Class Contato Pessoal
-```
+#
+#### - 📁 Classe `Contato Pessoal`
+> Representa a base de um Contato Pessoal, herdando da base `Contato` as características básica de um contato comum, e tendo adicionais de um contato pessoal. 
+
+```java
 class ContatoPessoal extends Contato{
     private String endereco;
     private String dataAniversario;
     
+    // construtor
     ContatoPessoal(String name, String email, String telefone, String endereco, String dataAniversario){
         super(name, email, telefone);
         this.endereco = endereco;
@@ -59,46 +102,18 @@ class ContatoPessoal extends Contato{
         return dataAniversario;
     }
     
+    // Método implementado da interface
     @Override
     public void informacao(){
         System.out.println("Contatos Pessoais");
     }
 }
+```
+#
+#### - 📁 Classe `Agenda`
+> Representa a `estrutura` das fucionalidades principais do projeto.
 
-```
-#### - Class Contato
-```
-class Contato implements Interligar{
-    private String name;
-    private String email;
-    private String telefone;
-    
-    Contato(String name, String email, String telefone){
-        this.name = name;
-        this.email = email;
-        this.telefone = telefone;
-    }
-    
-    String getName(){
-        return name;
-    }
-    
-    String getEmail(){
-        return email;
-    }
-    
-    String getTelefone(){
-        return telefone;
-    }
-    @Override
-    public void informacao(){
-        System.out.println("Contatos Gerais");
-    }
-}
-
-```
-#### - Class Agenda
-```
+```java
 import java.util.ArrayList;
 import java.util.List;
 
@@ -147,15 +162,20 @@ class Agenda{
     }
 }
 ```
-#### - Class Interligar
-```
+#
+#### - 📁 Classe `Interligar`
+> Interface para proporcionar informações gerais sobre o contato.
+
+```java
 interface Interligar{
     void informacao();
 }
 ```
-##### - Class Main()
+#
+#### - 📁 Classe `Main`
+> É a classe principal com o método `Main` que execulta o código completo, ultilizando as calsses citadas.
 
-```
+```java
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
