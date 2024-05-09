@@ -173,7 +173,7 @@ interface Interligar{
 ```
 #
 #### - 📁 Classe `Main`
-> É a classe principal com o método `Main` que execulta o código completo, ultilizando as calsses citadas.
+> Classe principal, que contém o método `Main` que execulta o código por completo.
 
 ```java
 import java.util.ArrayList;
