@@ -1,4 +1,3 @@
-```java
 class Contato implements Interligar {
     private String name;
     private String email;
@@ -30,4 +29,3 @@ class Contato implements Interligar {
         System.out.println("Contatos Gerais");
     }
 }
-```
