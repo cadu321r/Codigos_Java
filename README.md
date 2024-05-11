@@ -1,5 +1,15 @@
 ## 📖 Gerenciador de Contatos em Java
 
+
+![Badge](https://img.shields.io/badge/Version-0.1.0-%237159c1?style=for-the-badge&logo=github) 
+
+## 👀 Desenvolvedores
+<table>
+  <tr>
+    <td align="center"><a href="[https://github.com/natorjunior](https://github.com/cadu321r)"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/154270394?v=4" width="100px;" alt=""/><br /><sub><b>Carlos Eduardo</b></sub></a><br /><a href="[https://github.com/natorjunior](https://github.com/cadu321r)" title="Carlos Eduardo">👨‍🚀</a></td>
+</table>
+<br>
+
 Este projeto consiste no desenvolvimento de um **Gerenciador de Contatos** simplificado, utilizando a linguagem de programação **Java**. Ideal para quem busca eficiência e organização, este sistema permite a gestão de contatos profissionais e pessoais com facilidade e praticidade.
 
 ### 🌟 Funcionalidades Principais
