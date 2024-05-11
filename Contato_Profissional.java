@@ -1,4 +1,3 @@
-```java
 class ContatoProfissional extends Contato{
     private String empresa;
     private String cargo;
@@ -24,4 +23,3 @@ class ContatoProfissional extends Contato{
         System.out.println("Contatos Profissionais");
     }
 }
-```
