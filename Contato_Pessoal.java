@@ -1,4 +1,3 @@
-```java
 class ContatoPessoal extends Contato{
     private String endereco;
     private String dataAniversario;
@@ -24,4 +23,3 @@ class ContatoPessoal extends Contato{
         System.out.println("Contatos Pessoais");
     }
 }
-```
