@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-```java
 class ContatoPessoal extends Contato{
     private String endereco;
     private String dataAniversario;
@@ -52,4 +50,3 @@ class ContatoPessoal extends Contato{
         System.out.println("Contatos Pessoais");
     }
 }
->>>>>>> 2181dbb68489f82342a41a2e757b8ec49f33a5fc
